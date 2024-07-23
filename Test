@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choisissez un numéro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+        }
+        .animation {
+            display: none;
+            margin-top: 20px;
+        }
+        .message {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Choisissez un numéro entre 1 et 5</h1>
+        <input type="number" id="numberInput" min="1" max="5">
+        <button onclick="showAnimation()">Valider</button>
+        <div id="animation" class="animation"></div>
+        <div id="message" class="message"></div>
+    </div>
+
+    <script>
+        function showAnimation() {
+            const number = document.getElementById('numberInput').value;
+            const animationDiv = document.getElementById('animation');
+            const messageDiv = document.getElementById('message');
+            animationDiv.style.display = 'block';
+            animationDiv.innerHTML = '';
+            messageDiv.innerHTML = '';
+
+            switch (number) {
+                case '1':
+                    animationDiv.innerHTML = '<img src="https://i.gifer.com/8ChQ.gif" alt="Son Goku">';
+                    messageDiv.innerHTML = 'T’es le boss chef';
+                    break;
+                case '2':
+                    animationDiv.innerHTML = '<img src="https://i.gifer.com/3QeI.gif" alt="Chat mignon">';
+                    messageDiv.innerHTML = 'Gros câlin de loin';
+                    break;
+                case '3':
+                    animationDiv.innerHTML = '<img src="https://i.gifer.com/18Pe.gif" alt="Pluie de billets">';
+                    messageDiv.innerHTML = 'Tout l’argent du monde ne vaut pas ta présence';
+                    break;
+                case '4':
+                    animationDiv.innerHTML = '<img src="https://i.gifer.com/AXri.gif" alt="Zidane">';
+                    messageDiv.innerHTML = 'Aussi merveilleux que lui';
+                    break;
+                case '5':
+                    animationDiv.innerHTML = '<img src="https://i.gifer.com/8SzZ.gif" alt="Avion">';
+                    messageDiv.innerHTML = 'Je m’envole vers toi';
+                    break;
+                default:
+                    animationDiv.innerHTML = '<p>Veuillez choisir un numéro entre 1 et 5.</p>';
+            }
+        }
+    </script>
+</body>
+</html>
